@@ -1,3 +1,4 @@
-<div [innerHTML]="result">
+
+<div *ngIf="result" style="border: 1px solid black" [innerHTML]="result | safeHtml">
 
 </div>

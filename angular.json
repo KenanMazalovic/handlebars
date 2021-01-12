@@ -124,5 +124,8 @@
       }
     }
   },
-  "defaultProject": "spike-ticket"
+  "defaultProject": "spike-ticket",
+  "cli": {
+    "analytics": "a2388df7-e551-4e99-9467-7ffc5ece3222"
+  }
 }

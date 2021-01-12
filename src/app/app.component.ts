@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import {DomSanitizer} from '@angular/platform-browser';
+import {DomSanitizer, SafeHtml} from '@angular/platform-browser';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -7,6 +7,13 @@ import {DomSanitizer} from '@angular/platform-browser';
 })
 export class AppComponent {
 
+  constructor() {
+    this.mockDataHTML = `<div>
+  <img src= {{sponsorLogoUrl}} />
+  <h1 style="color:green">{{ headerText }}</h1>
+  <p>{{ content }}</p>
+  </div>`;
+  }
   mockData = [
     {
       name: 'content',
@@ -23,10 +30,6 @@ export class AppComponent {
     }
   ];
 
-  mockDataHTML = `<div>
-  <img src= {{sponsorLogoUrl}} />
-  <h1 style="color:green">{{ headerText }}</h1>
-  <p>{{ content }}</p>
-  </div>`;
+  mockDataHTML;
 
 }
