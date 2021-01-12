@@ -3,16 +3,22 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { DynamicFormComponent } from './dynamic-form/dynamic-form.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { HtmlHandlebarsComponent } from './html-handlebars/html-handlebars.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    DynamicFormComponent,
+    HtmlHandlebarsComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule
   ],
-  providers: [],
+  providers: [DynamicFormComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

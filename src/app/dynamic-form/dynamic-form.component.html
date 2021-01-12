@@ -1,0 +1,32 @@
+<form [formGroup]="form">
+    <div *ngFor="let element of formConfig">
+      <div [ngSwitch]="element.field_type">
+        <label>{{ element.name }}</label>
+        <br />
+        <div *ngSwitchCase="'input'">
+              <input
+              [name]="element.name"
+              [formControlName]="element.name"
+              />
+        </div>
+        <div *ngSwitchCase="'textarea'">
+            <textarea
+              [name]="element.name"
+              [formControlName]="element.name"
+            >
+            </textarea>
+      </div>
+      </div>
+    </div>
+  </form>
+
+  <p>
+     Form Value: {{ form.value | json }} 
+  </p>
+
+  <p>
+    Form Status: {{ form.status }}
+  </p>
+  <div>
+    <app-html-handlebars *ngIf="source" [source]="source" [data]="form?.value"></app-html-handlebars>
+  </div>
